@@ -1,0 +1,35 @@
+{% block title %}Order List{% endblock %}
+{% block body %}
+<html>
+                    <body><div class="col-md-12 order-form-grid  wow fadeInLeft">
+                        <h5>Order Information</h5>
+                        <h1>{{user_object.name}}</h1>
+                        <span>Items List:</span>
+                        <div>
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                    <th>Name</th>
+                                    </tr>
+                                          </thead>
+                                <thead>
+                                        {% for item in user_object %}
+                                        <td>
+                                    {{userobject.name}}
+                                    </td>
+                                    {% endfor %}
+                                    </td>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                    <th>
+                                        Price
+                                    </th>
+                                </thead>
+                                </table>
+                                </div>
+                                </div>
+                                    
+                                </body>>
+                                </html>
+{% endblock %}
