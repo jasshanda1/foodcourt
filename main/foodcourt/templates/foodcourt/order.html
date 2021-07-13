@@ -1,35 +1,20 @@
-{% block title %}Order List{% endblock %}
-{% block body %}
+<!DOCTYPE html>
 <html>
-                    <body><div class="col-md-12 order-form-grid  wow fadeInLeft">
-                        <h5>Order Information</h5>
-                        <h1>{{user_object.name}}</h1>
-                        <span>Items List:</span>
-                        <div>
-                            <table class="table table-hover table-bordered">
-                                <thead>
-                                    <tr>
-                                    <th>Name</th>
-                                    </tr>
-                                          </thead>
-                                <thead>
-                                        {% for item in user_object %}
-                                        <td>
-                                    {{userobject.name}}
-                                    </td>
-                                    {% endfor %}
-                                    </td>
-                                    <th>
-                                        Quantity
-                                    </th>
-                                    <th>
-                                        Price
-                                    </th>
-                                </thead>
-                                </table>
-                                </div>
-                                </div>
-                                    
-                                </body>>
-                                </html>
-{% endblock %}
+<body>
+
+<h2>Text input fields</h2>
+
+<form action="foodcourt/order/{{name_id}}/" method="post"></form>
+  <label for="fname">Name:</label><br>
+  <input type="text" id="fname" name="fname" value="{{username}}"><br>
+  <label for="fitem">food item:</label><br>
+  
+  <select name="fooditem" id="items" multiple>
+    {% for name in name_obj %}
+    <option value="{{name.name}}" name="sfooditem">{{name.name}}</option>
+    {% endfor %}
+  </select>
+  <input type="text" value="{{totalprice}}">
+</form>
+</body>
+</html>

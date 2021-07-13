@@ -1,23 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Base</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"></head>
-  <body>
-    <nav class="navbar navbar-default navbar-static-top">
-      <div class="container">
-        <ul class="nav navbar-nav">
-          <li><a class="navbar-link" href="{% url 'foodcourt:signup' %}">signup</a></li>
-          <li><a class="navbar-link" href="{% url 'foodcourt:signin' %}">signin</a></li>  
-          <li><a class="navbar-link" href="{% url 'foodcourt:order' %}">order</a></li>
-          <li><a class="navbar-link" href="{% url 'foodcourt:myorder' %}">myorder</a></li>  
-          </ul>
-      </div>
-    </nav>
+{% with ids="test" %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <div class="container ">
 			<h3 class="text-danger"><font size="5"><strong>Menu</strong></font></h3>
 			<br>
+      
+      <ul class="nav navbar-nav">
+        <!-- <li><a class="navbar-link" href="{% url 'foodcourt:index' %}">Home</a></li> -->
+         <li><a class="navbar-link" href="http://127.0.0.1:8000/order/{{name_id}}">order</a></li>
 				<table class="table table-hover table-bordered">
 					<thead>
               <tr>
@@ -34,14 +23,18 @@
             <td>{{item.name}}</td>
             <td>{{item.price}}</td>
             <td><input type="checkbox" id={{item.id}} name={{item.name}} value={{item.isactive}}>
+              
+            
 <label for={{item.name}}> {{item.name}}</label><br></td>
             </tr>
             {% endfor %}
-       </table>     
-       <button type="button" class="btn btn-danger">Place Order</button>
+       </table>   
+        <form action="/myorder/{{ids}}">
+       <button type="submit">click</button>
+       </form>
+      
     </div>
-    
-    
-    
+
   </body>
 </html>
+{% endwith %}

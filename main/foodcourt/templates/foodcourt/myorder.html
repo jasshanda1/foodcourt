@@ -1,0 +1,22 @@
+<div class="container ">
+    <h3 class="text-danger"><font size="5"><strong>Menu</strong></font></h3>
+    <br>
+        <table class="table table-hover table-bordered">
+            <thead>
+      <tr>
+      <th>ID</th>
+      <th>Name</th>
+      </tr>
+      
+            </thead>
+  <tr>
+    
+    {% for item in name_obj %}
+    <td>{{item.id}}</td>
+    <td>{{item.username}}</td>
+    </tr>
+    {% endfor %}
+</table>     
+</div>
+</body>
+</html>
